@@ -11,9 +11,17 @@ module "cloudwatch" {
 }
 
 module "vpc_flow_logs" {
-  source             = "./modules/vpc-flow-logs"
-  name_prefix        = "${var.project_name}-${var.environment}"
+  source      = "./modules/vpc-flow-logs"
+  name_prefix = "${var.project_name}-${var.environment}"
   # vpc_id             = var.vpc_id
   vpc_id             = local.shared_vpc_id
   log_retention_days = var.log_retention_days
+}
+
+##########Module_ECR##########
+module "ecr" {
+  source = "./modules/ecr"
+
+  project_name = var.project_name
+  environment  = var.environment
 }

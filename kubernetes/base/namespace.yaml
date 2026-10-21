@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: banking-sre
+  labels:
+    app.kubernetes.io/part-of: banking-sre-observability
+    environment: dev

@@ -12,7 +12,6 @@ data "terraform_remote_state" "project1" {
     region = var.aws_region
   }
 }
-
 #####################################################
 # Project 2 — EKS
 #
@@ -20,7 +19,6 @@ data "terraform_remote_state" "project1" {
 # phases. Project 1 resources are consumed as outputs
 # only and are not recreated or moved.
 #####################################################
-
 locals {
   shared_vpc_id             = data.terraform_remote_state.project1.outputs.vpc_id
   shared_public_subnet_ids  = data.terraform_remote_state.project1.outputs.public_subnet_ids
