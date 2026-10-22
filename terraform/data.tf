@@ -13,9 +13,9 @@ data "terraform_remote_state" "project1" {
   }
 }
 #####################################################
-# Project 2 — EKS
+# Project 3 — SRE
 #
-# EKS resources will be added here in controlled
+# SRE resources will be added here in controlled
 # phases. Project 1 resources are consumed as outputs
 # only and are not recreated or moved.
 #####################################################

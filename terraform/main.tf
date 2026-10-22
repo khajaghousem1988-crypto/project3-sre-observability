@@ -25,3 +25,30 @@ module "ecr" {
   project_name = var.project_name
   environment  = var.environment
 }
+
+##########AWS_Instance_Type##########
+
+# resource "aws_instance" "example" {
+#   ami           = var.ami_id
+#   instance_type = var.instance_type   # <-- reference happens here
+
+#   tags = {
+#     Name        = "${var.project_name}-${var.environment}"
+#     Environment = var.environment
+#   }
+# }
+
+# data "aws_ami" "amazon_linux" {
+#   most_recent = true
+#   owners      = ["amazon"]
+
+#   filter {
+#     name   = "name"
+#     values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+#   }
+# }
+
+# resource "aws_instance" "example" {
+#   ami           = data.aws_ami.amazon_linux.id
+#   instance_type = var.instance_type
+# }

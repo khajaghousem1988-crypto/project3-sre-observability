@@ -50,3 +50,15 @@ variable "project1_state_key" {
   default     = "terraform.tfstate"
 }
 
+##### Instance Type #####
+# variable "instance_type" {
+#   description = "EC2 instance size"
+#   type        = string
+#   default     = "t3.micro"
+# }
+
+# ##### AMI Id #####
+# variable "ami_id" {
+#   description = "EC2 instance size"
+#   type        = string
+# }
