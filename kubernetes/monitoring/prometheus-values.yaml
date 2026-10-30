@@ -9,23 +9,31 @@ server:
     limits:
       cpu: 500m
       memory: 512Mi
+ 
   global:
     scrape_interval: 15s
     evaluation_interval: 15s
-  extraScrapeConfigs:
-    - job_name: banking-sre-app
-      metrics_path: /metrics
-      static_configs:
-        - targets:
-            - banking-sre-app-service.banking-sre.svc.cluster.local:80
+ 
+extraScrapeConfigs: |
+  - job_name: banking-sre-app
+    metrics_path: /metrics
+    scrape_interval: 15s
+    static_configs:
+      - targets:
+          - banking-sre-app-service.banking-sre.svc.cluster.local:80
+ 
 alertmanager:
   enabled: false
+ 
 prometheus-pushgateway:
   enabled: false
+ 
 prometheus-node-exporter:
   enabled: false
+ 
 kube-state-metrics:
   enabled: false
+ 
 serverFiles:
   alerting_rules.yml:
     groups: []
