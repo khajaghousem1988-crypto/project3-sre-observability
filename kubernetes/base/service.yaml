@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: banking-sre-app
+  namespace: banking-sre
+  labels:
+    app: banking-sre-app
+spec:
+  selector:
+    app: banking-sre-app
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
